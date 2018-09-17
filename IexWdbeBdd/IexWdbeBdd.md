@@ -27,7 +27,7 @@ Structure
 Details
 ---
 
-### 1 System
+### 1 System ``[ImeIMSystem]``
 
 [//]: # (IP ImeIMSystem.superUse - BEGIN)
 
@@ -45,7 +45,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIMSystem.columns - END)
 
-### 1.1 Target
+### 1.1 Target ``[ImeIMTarget]``
 
 [//]: # (IP ImeIMTarget.superUse - BEGIN)
 
@@ -66,7 +66,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIMTarget.columns - END)
 
-### 2 Unit
+### 2 Unit ``[ImeIMUnit]``
 
 [//]: # (IP ImeIMUnit.superUse - BEGIN)
 
@@ -85,7 +85,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIMUnit.columns - END)
 
-### 2.1 Parameters
+### 2.1 Parameters ``[ImeIAMUnitPar]``
 
 [//]: # (IP ImeIAMUnitPar.superUse - BEGIN)
 
@@ -104,7 +104,7 @@ osrefKVal (string)|value<br>mchp: Microchip<br>xlnx: Xilinx<br>pic24f16kl402/ss:
 
 [//]: # (IP ImeIAMUnitPar.columns - END)
 
-### 2.2 Module
+### 2.2 Module ``[ImeIMModule]``
 
 [//]: # (IP ImeIMModule.superUse - BEGIN)
 
@@ -126,7 +126,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIMModule.columns - END)
 
-### 2.2.1 Parameters
+### 2.2.1 Parameters ``[ImeIAMModulePar]``
 
 [//]: # (IP ImeIAMModulePar.superUse - BEGIN)
 
@@ -145,7 +145,7 @@ Val (string)|value|
 
 [//]: # (IP ImeIAMModulePar.columns - END)
 
-### 2.2.2 Controller
+### 2.2.2 Controller ``[ImeIMController]``
 
 [//]: # (IP ImeIMController.superUse - BEGIN)
 
@@ -163,7 +163,7 @@ srefFwdRefWdbeMUnit (string)|unit forwarded to|
 
 [//]: # (IP ImeIMController.columns - END)
 
-### 2.2.3 Inter-module buffer
+### 2.2.3 Inter-module buffer ``[ImeIMImbuf]``
 
 [//]: # (IP ImeIMImbuf.superUse - BEGIN)
 
