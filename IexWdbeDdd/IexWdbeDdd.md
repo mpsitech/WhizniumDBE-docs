@@ -59,11 +59,11 @@ Details
 
 ### 1 Unit ``[ImeIMUnit]``
 
-[//]: # (IP ImeIMUnit.superUse - BEGIN)
+[//]: # (IP ImeIMUnit.superUse - RBEGIN)
 
-Use:
+Use: retrieve unit defined in IexWdbeBdd.
 
-[//]: # (IP ImeIMUnit.superUse - END)
+[//]: # (IP ImeIMUnit.superUse - REND)
 
 [//]: # (IP ImeIMUnit.columns - BEGIN)
 
@@ -75,13 +75,13 @@ sref (string)|identifier|
 
 ### 1.1 I/O bank ``[ImeIMBank]``
 
-[//]: # (IP ImeIMBank.superUse - BEGIN)
+[//]: # (IP ImeIMBank.superUse - RBEGIN)
 
 Super import: unit (1:N)
 
-Use:
+Use: information for FPGA user constraints file.
 
-[//]: # (IP ImeIMBank.superUse - END)
+[//]: # (IP ImeIMBank.superUse - REND)
 
 [//]: # (IP ImeIMBank.columns - BEGIN)
 
@@ -94,51 +94,51 @@ srefKVoltstd (string)|voltage standard<br>_1v2: 1.2V<br>_1v8: 1.8V<br>_2v5: 2.5V
 
 ### 1.1.1 TblWdbeCPin ``[ImeICPin]``
 
-[//]: # (IP ImeICPin.superUse - BEGIN)
+[//]: # (IP ImeICPin.superUse - RBEGIN)
 
 Super import: I/O bank (1:N)
 
-Use:
+Use: group pins of the same bus.
 
-[//]: # (IP ImeICPin.superUse - END)
+[//]: # (IP ImeICPin.superUse - REND)
 
-[//]: # (IP ImeICPin.columns - BEGIN)
+[//]: # (IP ImeICPin.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICPin.columns - END)
+[//]: # (IP ImeICPin.columns - REND)
 
 ### 1.1.2 Pin ``[ImeIMPin]``
 
-[//]: # (IP ImeIMPin.superUse - BEGIN)
+[//]: # (IP ImeIMPin.superUse - RBEGIN)
 
 Super import: I/O bank (1:N)
 
-Use:
+Use: information for FPGA user constraints file.
 
-[//]: # (IP ImeIMPin.superUse - END)
+[//]: # (IP ImeIMPin.superUse - REND)
 
-[//]: # (IP ImeIMPin.columns - BEGIN)
+[//]: # (IP ImeIMPin.columns - RBEGIN)
 
 Column|Content|
 -|-|
-irefRefWdbeCPin (ubigint)|TblWdbeCPin|
+irefRefWdbeCPin (ubigint)|integer reference to ImeICPin|
 sref (string)|identifier|
-Location (string)|location|
+Location (string)|physical location / package pin name|
 
-[//]: # (IP ImeIMPin.columns - END)
+[//]: # (IP ImeIMPin.columns - REND)
 
 ### 1.1.2.1 Parameters ``[ImeIAMPinPar]``
 
-[//]: # (IP ImeIAMPinPar.superUse - BEGIN)
+[//]: # (IP ImeIAMPinPar.superUse - RBEGIN)
 
 Super import: pin (1:N)
 
-Use:
+Use: special FPGA user constraints (key/value pairs).
 
-[//]: # (IP ImeIAMPinPar.superUse - END)
+[//]: # (IP ImeIAMPinPar.superUse - REND)
 
 [//]: # (IP ImeIAMPinPar.columns - BEGIN)
 
@@ -151,48 +151,48 @@ Val (string)|value|
 
 ### 1.2 Command ``[ImeIMCommand1]``
 
-[//]: # (IP ImeIMCommand1.superUse - BEGIN)
+[//]: # (IP ImeIMCommand1.superUse - RBEGIN)
 
 Super import: unit (1:N)
 
-Use:
+Use: non-FPGA units only - self-explanatory.
 
-[//]: # (IP ImeIMCommand1.superUse - END)
+[//]: # (IP ImeIMCommand1.superUse - REND)
 
-[//]: # (IP ImeIMCommand1.columns - BEGIN)
+[//]: # (IP ImeIMCommand1.columns - RBEGIN)
 
 Column|Content|
 -|-|
-refNum (uint)|reference|
+refNum (uint)|op-code, else 0|
 sref (string)|identifier|
 srefIxVRettype (string)|return type<br>void: none<br>immsng: immediate single<br>dfrsng: deferred single<br>mult: multiple|
 Comment (string)|comment|
 
-[//]: # (IP ImeIMCommand1.columns - END)
+[//]: # (IP ImeIMCommand1.columns - REND)
 
 ### 1.2.1 Invocation parameters ``[ImeIAMCommandInvpar1]``
 
-[//]: # (IP ImeIAMCommandInvpar1.superUse - BEGIN)
+[//]: # (IP ImeIAMCommandInvpar1.superUse - RBEGIN)
 
 Super import: command (1:N)
 
-Use:
+Use: self-explanatory.
 
-[//]: # (IP ImeIAMCommandInvpar1.superUse - END)
+[//]: # (IP ImeIAMCommandInvpar1.superUse - REND)
 
-[//]: # (IP ImeIAMCommandInvpar1.columns - BEGIN)
+[//]: # (IP ImeIAMCommandInvpar1.columns - RBEGIN)
 
 Column|Content|
 -|-|
 sref (string)|identifier|
 srefIxWdbeVPartype (string)|parameter data type<br>tix: vector item index<br>_bool: boolean<br>tinyint: integer / byte (8bit)<br>utinyint: unsigned integer / byte (8bit)<br>smallint: integer (16bit)<br>usmallint: unsigned integer (16bit)<br>int: integer (32bit)<br>uint: unsigned integer (32bit)<br>blob: fixed length binary large object<br>vblob: variable length bin. large. obj.|
-srefRefWdbeMVector (string)|vector|
-Length (utinyint)|length|
+srefRefWdbeMVector (string)|tix par. type - vector|
+Length (utinyint)|blob/vblob partype - (max.) length|
 Defval (string)|default value|
-srefRefWdbeMVectoritem (string)|vector item|
+srefRefWdbeMVectoritem (string)|tix par. type - default vector item|
 Comment (string)|comment|
 
-[//]: # (IP ImeIAMCommandInvpar1.columns - END)
+[//]: # (IP ImeIAMCommandInvpar1.columns - REND)
 
 ### 1.2.2 Return parameters ``[ImeIAMCommandRetpar1]``
 
@@ -200,7 +200,7 @@ Comment (string)|comment|
 
 Super import: command (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIAMCommandRetpar1.superUse - END)
 
@@ -210,8 +210,8 @@ Column|Content|
 -|-|
 sref (string)|identifier|
 srefIxWdbeVPartype (string)|parameter data type<br>tix: vector item index<br>_bool: boolean<br>tinyint: integer / byte (8bit)<br>utinyint: unsigned integer / byte (8bit)<br>smallint: integer (16bit)<br>usmallint: unsigned integer (16bit)<br>int: integer (32bit)<br>uint: unsigned integer (32bit)<br>blob: fixed length binary large object<br>vblob: variable length bin. large. obj.|
-srefRefWdbeMVector (string)|vector|
-Length (utinyint)|length|
+srefRefWdbeMVector (string)|tix par. type - vector|
+Length (utinyint)|blob/vblob par. type - (max.) length|
 Comment (string)|comment|
 
 [//]: # (IP ImeIAMCommandRetpar1.columns - END)
@@ -222,7 +222,7 @@ Comment (string)|comment|
 
 Super import: unit (1:N)
 
-Use:
+Use: non-FPGA units only - error analogous to "abnormal return" of command.
 
 [//]: # (IP ImeIMError1.superUse - END)
 
@@ -230,7 +230,7 @@ Use:
 
 Column|Content|
 -|-|
-refNum (uint)|reference|
+refNum (uint)|op-code, else 0|
 sref (string)|identifier|
 Comment (string)|comment|
 
@@ -242,7 +242,7 @@ Comment (string)|comment|
 
 Super import: error (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIAMErrorPar1.superUse - END)
 
@@ -252,8 +252,8 @@ Column|Content|
 -|-|
 sref (string)|identifier|
 srefIxWdbeVPartype (string)|parameter data type<br>tix: vector item index<br>_bool: boolean<br>tinyint: integer / byte (8bit)<br>utinyint: unsigned integer / byte (8bit)<br>smallint: integer (16bit)<br>usmallint: unsigned integer (16bit)<br>int: integer (32bit)<br>uint: unsigned integer (32bit)<br>blob: fixed length binary large object<br>vblob: variable length bin. large. obj.|
-srefRefWdbeMVector (string)|vector|
-Length (utinyint)|length|
+srefRefWdbeMVector (string)|tix par. type - vector|
+Length (utinyint)|blob/vblob par. type - (max.) length|
 Comment (string)|comment|
 
 [//]: # (IP ImeIAMErrorPar1.columns - END)
@@ -264,7 +264,7 @@ Comment (string)|comment|
 
 Super import: unit (1:N)
 
-Use:
+Use: retrieve module defined in IexWdbeBdd.
 
 [//]: # (IP ImeIMModule.superUse - END)
 
@@ -283,17 +283,17 @@ sref (string)|identifier|
 
 Super import: module (1:N)
 
-Use:
+Use: group generics.
 
 [//]: # (IP ImeICGeneric.superUse - END)
 
-[//]: # (IP ImeICGeneric.columns - BEGIN)
+[//]: # (IP ImeICGeneric.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICGeneric.columns - END)
+[//]: # (IP ImeICGeneric.columns - REND)
 
 ### 1.4.2 TblWdbeCPort ``[ImeICPort]``
 
@@ -301,17 +301,17 @@ iref (ubigint)|ref|
 
 Super import: module (1:N)
 
-Use:
+Use: group ports.
 
 [//]: # (IP ImeICPort.superUse - END)
 
-[//]: # (IP ImeICPort.columns - BEGIN)
+[//]: # (IP ImeICPort.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICPort.columns - END)
+[//]: # (IP ImeICPort.columns - REND)
 
 ### 1.4.3 TblWdbeCSignal ``[ImeICSignal]``
 
@@ -319,17 +319,17 @@ iref (ubigint)|ref|
 
 Super import: module (1:N)
 
-Use:
+Use: group signals. Mandatory e.g. for handshake signals.
 
 [//]: # (IP ImeICSignal.superUse - END)
 
-[//]: # (IP ImeICSignal.columns - BEGIN)
+[//]: # (IP ImeICSignal.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICSignal.columns - END)
+[//]: # (IP ImeICSignal.columns - REND)
 
 ### 1.4.4 Controller ``[ImeIMController]``
 
@@ -337,7 +337,7 @@ iref (ubigint)|ref|
 
 Super import: module (1:1)
 
-Use:
+Use: retrieve controller defined in IexWdbeBdd.
 
 [//]: # (IP ImeIMController.superUse - END)
 
@@ -346,7 +346,7 @@ Use:
 Column|Content|
 -|-|
 srefIxWdbeVIop (string)|import operation<br>retr: retrieve<br>retrupd: retrieve and update|
-srefClrRefWdbeMSignal (string)|command lock request signal|
+srefClrRefWdbeMSignal (string)|full model only - command lock request signal|
 
 [//]: # (IP ImeIMController.columns - END)
 
@@ -356,7 +356,7 @@ srefClrRefWdbeMSignal (string)|command lock request signal|
 
 Super import: controller (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIMCommand2.superUse - END)
 
@@ -364,7 +364,7 @@ Use:
 
 Column|Content|
 -|-|
-refNum (uint)|reference|
+refNum (uint)|op-code, else 0|
 sref (string)|identifier|
 srefIxVRettype (string)|return type<br>void: none<br>immsng: immediate single<br>dfrsng: deferred single<br>mult: multiple|
 srefIvrRefWdbeMSignal (string)|invocation request signal|
@@ -380,7 +380,7 @@ Comment (string)|comment|
 
 Super import: command (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIAMCommandInvpar2.superUse - END)
 
@@ -404,7 +404,7 @@ Comment (string)|comment|
 
 Super import: command (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIAMCommandRetpar2.superUse - END)
 
@@ -426,7 +426,7 @@ Comment (string)|comment|
 
 Super import: controller (1:N)
 
-Use:
+Use: error analogous to "abnormal return" of command.
 
 [//]: # (IP ImeIMError2.superUse - END)
 
@@ -434,7 +434,7 @@ Use:
 
 Column|Content|
 -|-|
-refNum (uint)|reference|
+refNum (uint)|op-code, else 0|
 sref (string)|identifier|
 srefTraRefWdbeMSignal (string)|trigger acknowledgement signal|
 Comment (string)|comment|
@@ -447,7 +447,7 @@ Comment (string)|comment|
 
 Super import: error (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIAMErrorPar2.superUse - END)
 
@@ -469,7 +469,7 @@ Comment (string)|comment|
 
 Super import: controller (1:N)
 
-Use:
+Use: utinyint index vector specific to controller. Vector items can be used as arguments for the controller's commands and errors.
 
 [//]: # (IP ImeIMVector2.superUse - END)
 
@@ -477,7 +477,7 @@ Use:
 
 Column|Content|
 -|-|
-srefIxVBasetype (string)|type<br>ixlin: uint index linear<br>tixlin: utinyint index linear<br>tixor: utinyint index multi-choice|
+srefIxVBasetype (string)|type<br>tixlin: utinyint index linear<br>tixor: utinyint index multi-choice|
 sref (string)|identifier|
 srefsKOption (string)|options<br>notit: no titles<br>cmt: comments<br>apdfed: append to feed<br>filfed: fill feed|
 
@@ -489,7 +489,7 @@ srefsKOption (string)|options<br>notit: no titles<br>cmt: comments<br>apdfed: ap
 
 Super import: vector (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIMVectoritem2.superUse - END)
 
@@ -509,7 +509,7 @@ Comment (string)|comment|
 
 Super import: controller (1:N)
 
-Use:
+Use: commands invoked in other controllers.
 
 [//]: # (IP ImeIRMCommandMController.superUse - END)
 
@@ -517,7 +517,7 @@ Use:
 
 Column|Content|
 -|-|
-srefRefWdbeMCommand (string)|command|
+srefRefWdbeMCommand (string)|command with controller prepended|
 srefIvrRefWdbeMSignal (string)|invocation request signal|
 srefRvrRefWdbeMSignal (string)|revocation request signal|
 
@@ -529,7 +529,7 @@ srefRvrRefWdbeMSignal (string)|revocation request signal|
 
 Super import: module (1:N)
 
-Use:
+Use: equivalent to VHDL generic.
 
 [//]: # (IP ImeIMGeneric.superUse - END)
 
@@ -538,11 +538,11 @@ Use:
 Column|Content|
 -|-|
 srefIxWdbeVIop (string)|import operation<br>ins: insert<br>retrupd: retrieve and update|
-irefRefWdbeCGeneric (ubigint)|TblWdbeCGeneric|
+irefRefWdbeCGeneric (ubigint)|integer reference to ImeICGeneric|
 sref (string)|identifier|
 srefWdbeKHdltype (string)|HDL data type<br>char: character<br>int: integer<br>nat: natural<br>sl: standard logic<br>slvup: standard logic vector up<br>slvdn: standard logic vector down<br>str: string|
-Width (usmallint)|width|
-Minmax (string)|width|
+Width (usmallint)|slvup, slvdn HDL data type - width|
+Minmax (string)|nat HDL data type - range|
 Defval (string)|default value|
 srcSrefWdbeMGeneric (string)|source generic|
 Comment (string)|comment|
@@ -555,7 +555,7 @@ Comment (string)|comment|
 
 Super import: module (1:1)
 
-Use:
+Use: retrieve inter-module buffer defined in IexWdbeBdd.
 
 [//]: # (IP ImeIMImbuf.superUse - END)
 
@@ -573,7 +573,7 @@ Prio (utinyint)|priority|
 
 Super import: module (1:N)
 
-Use:
+Use: equivalent to VHDL port.
 
 [//]: # (IP ImeIMPort.superUse - END)
 
@@ -582,13 +582,13 @@ Use:
 Column|Content|
 -|-|
 srefIxWdbeVIop (string)|import operation<br>ins: insert<br>retrupd: retrieve and update|
-irefRefWdbeCPort (ubigint)|TblWdbeCPort|
-srefMdlIxVCat (string)|module<br>reset: global reset<br>clk: clock<br>rtewrp: route to wrapper signal<br>rtetop: route to top module signal<br>cmdbus: command bus<br>imb: inter-module buffer<br>rtesup: route to super module<br>rtepin: route to pin<br>dbg: debug|
+irefRefWdbeCPort (ubigint)|integer reference to ImeICPort|
+srefMdlIxVCat (string)|category<br>reset: global reset<br>clk: clock<br>rtewrp: route to wrapper signal<br>rtetop: route to top module signal<br>cmdbus: command bus<br>imb: inter-module buffer<br>rtesup: route to super module<br>rtepin: route to pin<br>dbg: debug|
 sref (string)|identifier|
 srefIxVDir (string)|direction<br>in: input<br>inout: input/output<br>out: output|
 srefWdbeKHdltype (string)|HDL data type<br>char: character<br>int: integer<br>nat: natural<br>sl: standard logic<br>slvup: standard logic vector up<br>slvdn: standard logic vector down<br>str: string|
-Width (usmallint)|width|
-Minmax (string)|min./max. value|
+Width (usmallint)|slvup, slvdn HDL data type - width|
+Minmax (string)|nat HDL data type - range|
 Defval (string)|default value|
 cpiSrefWdbeMPin (string)|pin connected to|
 cprSrefWdbeMPort (string)|port connected to|
@@ -603,7 +603,7 @@ Comment (string)|comment|
 
 Super import: module (1:N)
 
-Use:
+Use: equivalent to VHDL process.
 
 [//]: # (IP ImeIMProcess.superUse - END)
 
@@ -627,7 +627,7 @@ Comment (string)|comment|
 
 Super import: process (1:N)
 
-Use:
+Use: definition of custom data types.
 
 [//]: # (IP ImeIAVKeylistKey.superUse - END)
 
@@ -645,7 +645,7 @@ sref (string)|identifier|
 
 Super import: keys (1:N)
 
-Use:
+Use: single entry, names defines the VHDL data type.
 
 [//]: # (IP ImeIJAVKeylistKey.superUse - END)
 
@@ -653,8 +653,8 @@ Use:
 
 Column|Content|
 -|-|
-Title (string)|Title|
-Comment (string)|Comment|
+Title (string)|name|
+Comment (string)|comment|
 
 [//]: # (IP ImeIJAVKeylistKey.columns - END)
 
@@ -664,17 +664,17 @@ Comment (string)|Comment|
 
 Super import: process (1:N)
 
-Use:
+Use: group variable.
 
 [//]: # (IP ImeICVariable.superUse - END)
 
-[//]: # (IP ImeICVariable.columns - BEGIN)
+[//]: # (IP ImeICVariable.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICVariable.columns - END)
+[//]: # (IP ImeICVariable.columns - REND)
 
 ### 1.4.8.3 Finite state machine ``[ImeIMFsm]``
 
@@ -682,16 +682,9 @@ iref (ubigint)|ref|
 
 Super import: process (1:1)
 
-Use:
+Use: indicate a process is a finite state machine (no content)
 
 [//]: # (IP ImeIMFsm.superUse - END)
-
-[//]: # (IP ImeIMFsm.columns - BEGIN)
-
-Column|Content|
--|-|
-
-[//]: # (IP ImeIMFsm.columns - END)
 
 ### 1.4.8.3.1 TblWdbeCFsmstate ``[ImeICFsmstate]``
 
@@ -699,17 +692,17 @@ Column|Content|
 
 Super import: finite state machine (1:N)
 
-Use:
+Use: group FSM states. States within a group must only differ in their last character.
 
 [//]: # (IP ImeICFsmstate.superUse - END)
 
-[//]: # (IP ImeICFsmstate.columns - BEGIN)
+[//]: # (IP ImeICFsmstate.columns - RBEGIN)
 
 Column|Content|
 -|-|
-iref (ubigint)|ref|
+iref (ubigint)|integer reference|
 
-[//]: # (IP ImeICFsmstate.columns - END)
+[//]: # (IP ImeICFsmstate.columns - REND)
 
 ### 1.4.8.3.2 FSM state `[ImeIMFsmstate]``
 
@@ -717,7 +710,7 @@ iref (ubigint)|ref|
 
 Super import: finite state machine (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIMFsmstate.superUse - END)
 
@@ -725,7 +718,7 @@ Use:
 
 Column|Content|
 -|-|
-irefRefWdbeCFsmstate (ubigint)|TblWdbeCFsmstate|
+irefRefWdbeCFsmstate (ubigint)|integer reference to ImeICFsmstate|
 sref (string)|identifier|
 Extip (bool)|external insertion point|
 Comment (string)|comment|
@@ -738,7 +731,7 @@ Comment (string)|comment|
 
 Super import: FSM state (1:N)
 
-Use:
+Use: define condition sets in VHDL which result in the stepping to other states. Results in nested if/elsif/else statements, up to four levels.
 
 [//]: # (IP ImeIAMFsmstateStep.superUse - END)
 
@@ -764,7 +757,7 @@ Ip4 (string)|insertion point 4|
 
 Super import: process (1:N)
 
-Use:
+Use: equivalent to VHDL variable.
 
 [//]: # (IP ImeIMVariable.superUse - END)
 
@@ -772,13 +765,13 @@ Use:
 
 Column|Content|
 -|-|
-irefRefWdbeCVariable (ubigint)|TblWdbeCVariable|
+irefRefWdbeCVariable (ubigint)|integer reference to ImeICVariable|
 sref (string)|identifier|
 Const (bool)|constant|
 Falling (bool)|falling edge sub-process|
 srefWdbeKHdltype (string)|HDL data type<br>char: character<br>int: integer<br>nat: natural<br>sl: standard logic<br>slvup: standard logic vector up<br>slvdn: standard logic vector down<br>str: string|
-Width (utinyint)|width|
-Minmax (string)|width|
+Width (utinyint)|slvup, slvdn HDL data types - width|
+Minmax (string)|nat HDL data type - range|
 Onval (string)|'on' value|
 Offval (string)|'off' value|
 Defon (bool)|'on' by default|
@@ -792,7 +785,7 @@ Comment (string)|comment|
 
 Super import: module (1:N)
 
-Use:
+Use: equivalent to VHDL signal.
 
 [//]: # (IP ImeIMSignal.superUse - END)
 
@@ -801,19 +794,18 @@ Use:
 Column|Content|
 -|-|
 srefIxVBasetype (string)|type<br>clk: clock<br>hshk: handshake<br>oprt: output port driver<br>ioprt: input/output port driver<br>psb: pin substitute<br>strb: strobe<br>oth: other|
-irefRefWdbeCSignal (ubigint)|TblWdbeCSignal|
+irefRefWdbeCSignal (ubigint)|integer reference to ImeICSignal|
 srefMgeIxVTbl (string)|managing entity<br>void: none<br>mdl: sub-module<br>prc: process|
 srefMgeUref (string)|managing entity|
 sref (string)|identifier|
 Const (bool)|constant|
 srefWdbeKHdltype (string)|HDL data type<br>char: character<br>int: integer<br>nat: natural<br>sl: standard logic<br>slvup: standard logic vector up<br>slvdn: standard logic vector down<br>str: string|
-Width (usmallint)|width|
-Minmax (string)|width|
+Width (usmallint)|slvup, slvdn HDL data types - width|
+Minmax (string)|nat HDL data type - range|
 Comb (string)|combinatorial expression|
 Onval (string)|'on' value|
 Offval (string)|'off' value|
 Defon (bool)|'on' by default|
-Sync (bool)|sync. to process clock|
 srefDrvRefWdbeMPort (string)|port driven|
 Comment (string)|comment|
 
@@ -825,7 +817,7 @@ Comment (string)|comment|
 
 Super import: unit (1:N)
 
-Use:
+Use: vector attached to unit.
 
 [//]: # (IP ImeIMVector1.superUse - END)
 
@@ -845,7 +837,7 @@ srefsKOption (string)|options<br>notit: no titles<br>cmt: comments<br>apdfed: ap
 
 Super import: vector (1:N)
 
-Use:
+Use: self-explanatory.
 
 [//]: # (IP ImeIMVectoritem1.superUse - END)
 

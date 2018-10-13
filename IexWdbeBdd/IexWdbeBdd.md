@@ -29,11 +29,11 @@ Details
 
 ### 1 System ``[ImeIMSystem]``
 
-[//]: # (IP ImeIMSystem.superUse - BEGIN)
+[//]: # (IP ImeIMSystem.superUse - RBEGIN)
 
-Use:
+Use: full model only - a system is one possible hierarchical combination of units.
 
-[//]: # (IP ImeIMSystem.superUse - END)
+[//]: # (IP ImeIMSystem.superUse - REND)
 
 [//]: # (IP ImeIMSystem.columns - BEGIN)
 
@@ -47,32 +47,32 @@ Comment (string)|comment|
 
 ### 1.1 Target ``[ImeIMTarget]``
 
-[//]: # (IP ImeIMTarget.superUse - BEGIN)
+[//]: # (IP ImeIMTarget.superUse - RBEGIN)
 
 Super import: system (1:N)
 
-Use:
+Use: full model only - a target combines a system's unit with the routing to be followed in order to reach it.
 
-[//]: # (IP ImeIMTarget.superUse - END)
+[//]: # (IP ImeIMTarget.superUse - REND)
 
-[//]: # (IP ImeIMTarget.columns - BEGIN)
+[//]: # (IP ImeIMTarget.columns - RBEGIN)
 
 Column|Content|
 -|-|
 srefRefWdbeMUnit (string)|unit|
 sref (string)|identifier|
-rteSrefsWdbeMModule (string)|module|
+rteSrefsWdbeMModule (string)|routing - sequence of other units' forwarding controllers starting from root unit|
 Comment (string)|comment|
 
-[//]: # (IP ImeIMTarget.columns - END)
+[//]: # (IP ImeIMTarget.columns - REND)
 
 ### 2 Unit ``[ImeIMUnit]``
 
-[//]: # (IP ImeIMUnit.superUse - BEGIN)
+[//]: # (IP ImeIMUnit.superUse - RBEGIN)
 
-Use:
+Use: a unit typically represents one PCB which can be addressed individually from the host.
 
-[//]: # (IP ImeIMUnit.superUse - END)
+[//]: # (IP ImeIMUnit.superUse - REND)
 
 [//]: # (IP ImeIMUnit.columns - BEGIN)
 
@@ -87,32 +87,32 @@ Comment (string)|comment|
 
 ### 2.1 Parameters ``[ImeIAMUnitPar]``
 
-[//]: # (IP ImeIAMUnitPar.superUse - BEGIN)
+[//]: # (IP ImeIAMUnitPar.superUse - RBEGIN)
 
 Super import: unit (1:N)
 
-Use:
+Use: unit parameter (key/value pair).
 
-[//]: # (IP ImeIAMUnitPar.superUse - END)
+[//]: # (IP ImeIAMUnitPar.superUse - REND)
 
-[//]: # (IP ImeIAMUnitPar.columns - BEGIN)
+[//]: # (IP ImeIAMUnitPar.columns - RBEGIN)
 
 Column|Content|
 -|-|
-x1SrefKKey (string)|key<br>mnf: manufacturer<br>partno: part number<br>toolch: tool chain|
-osrefKVal (string)|value<br>mchp: Microchip<br>xlnx: Xilinx<br>pic24f16kl402/ss: PIC24 16MHz SSOP28<br>xc3s100e-vqg100: Spartan-3E 100 QFP100<br>xc3s100e-cpg132: Spartan-3E 100 BGA132<br>xc3s250e-4vqg100: Spartan-3E 250 QFP100<br>xc3s500e-4vqg100: Spartan-3E 500 QFP100<br>xc3s500e-fgg320: Spartan-3E 500 BGA320<br>xc7a35t-1cpg236: Artix-7 35 BGA236<br>xc7a100t-2fgg484c: Artix-7 100 BGA484<br>xc7z020-clg484-1: Zynq 7020 BGA484<br>xczu3eg-sfva625-1: Zynq UltraScale+ EG BGA625<br>ise: Xilinx ISE<br>mplab: Microchip MPLAB X<br>vivado: Xilinx Vivado<br>vivzynq: Xilinx Vivado for Zynq|
+x1SrefKKey (string)|key<br>mnf: manufacturer<br>partno: part number<br>toolch: tool chain _- required for FPGA-based units_|
+osrefKVal (string)|value<br>_[key:mnf]_<br>mchp: Microchip<br>xlnx: Xilinx<br>_[key:partno]_<br>pic24f16kl402/ss: PIC24 16MHz SSOP28<br>xc3s100e-vqg100: Spartan-3E 100 QFP100<br>xc3s100e-cpg132: Spartan-3E 100 BGA132<br>xc3s250e-4vqg100: Spartan-3E 250 QFP100<br>xc3s500e-4vqg100: Spartan-3E 500 QFP100<br>xc3s500e-fgg320: Spartan-3E 500 BGA320<br>xc7a35t-1cpg236: Artix-7 35 BGA236<br>xc7a100t-2fgg484c: Artix-7 100 BGA484<br>xc7z020-clg484-1: Zynq 7020 BGA484<br>xczu3eg-sfva625-1: Zynq UltraScale+ EG BGA625<br>_[key:toolch]_<br>ise: Xilinx ISE<br>mplab: Microchip MPLAB X<br>vivado: Xilinx Vivado<br>vivzynq: Xilinx Vivado for Zynq|
 
-[//]: # (IP ImeIAMUnitPar.columns - END)
+[//]: # (IP ImeIAMUnitPar.columns - REND)
 
 ### 2.2 Module ``[ImeIMModule]``
 
-[//]: # (IP ImeIMModule.superUse - BEGIN)
+[//]: # (IP ImeIMModule.superUse - RBEGIN)
 
 Super import: unit (1:N)
 
-Use:
+Use: FPGA-based units only - equivalent to VHDL module.
 
-[//]: # (IP ImeIMModule.superUse - END)
+[//]: # (IP ImeIMModule.superUse - REND)
 
 [//]: # (IP ImeIMModule.columns - BEGIN)
 
@@ -128,13 +128,13 @@ Comment (string)|comment|
 
 ### 2.2.1 Parameters ``[ImeIAMModulePar]``
 
-[//]: # (IP ImeIAMModulePar.superUse - BEGIN)
+[//]: # (IP ImeIAMModulePar.superUse - RBEGIN)
 
 Super import: module (1:N)
 
-Use:
+Use: customize template-based modules based (key/value pairs).
 
-[//]: # (IP ImeIAMModulePar.superUse - END)
+[//]: # (IP ImeIAMModulePar.superUse - REND)
 
 [//]: # (IP ImeIAMModulePar.columns - BEGIN)
 
@@ -151,27 +151,27 @@ Val (string)|value|
 
 Super import: module (1:1)
 
-Use:
+Use: attach to forwarding controller to state the unit it is forwarding to.
 
 [//]: # (IP ImeIMController.superUse - END)
 
-[//]: # (IP ImeIMController.columns - BEGIN)
+[//]: # (IP ImeIMController.columns - RBEGIN)
 
 Column|Content|
 -|-|
-srefFwdRefWdbeMUnit (string)|unit forwarded to|
+srefFwdRefWdbeMUnit (string)|unit forwarding to|
 
-[//]: # (IP ImeIMController.columns - END)
+[//]: # (IP ImeIMController.columns - REND)
 
 ### 2.2.3 Inter-module buffer ``[ImeIMImbuf]``
 
-[//]: # (IP ImeIMImbuf.superUse - BEGIN)
+[//]: # (IP ImeIMImbuf.superUse - RBEGIN)
 
 Super import: module (1:1)
 
-Use:
+Use: attach to inter-module buffer to state the corresponding module and data flow direction.
 
-[//]: # (IP ImeIMImbuf.superUse - END)
+[//]: # (IP ImeIMImbuf.superUse - REND)
 
 [//]: # (IP ImeIMImbuf.columns - BEGIN)
 
