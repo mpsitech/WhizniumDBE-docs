@@ -15,7 +15,7 @@ Structure
 
 <br>&nbsp;&nbsp;&nbsp;&nbsp;\+ Unit [``[ImeIMUnit]``](#1-unit-imeimunit)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ I/O bank [``[ImeIMBank]``](#11-io-bank-imeimbank)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCPin [``[ImeICPin]``](#111-tblwdbecpin-imeicpin)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Pins cluster [``[ImeICPin]``](#111-pin-cluster-imeicpin)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Pin [``[ImeIMPin]``](#112-pin-imeimpin)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Parameters [``[ImeIAMPinPar]``](#1121-parameters-imeiampinpar)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Command [``[ImeIMCommand1]``](#12-command-imeimcommand1)
@@ -24,9 +24,9 @@ Structure
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Error [``[ImeIMError1]``](#13-error-imeimerror1)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Parameters [``[ImeIAMErrorPar1]``](#131-parameters-imeiamerrorpar1)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Module [``[ImeIMModule]``](#14-module-imeimmodule)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCGeneric [``[ImeICGeneric]``](#141-tblwdbecgeneric-imeicgeneric)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCPort [``[ImeICPort]``](#142-tblwdbecport-imeicport)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCSignal [``[ImeICSignal]``](#143-tblwdbecsignal-imeicsignal)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Generics cluster [``[ImeICGeneric]``](#141-generics-cluster-imeicgeneric)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Ports cluster [``[ImeICPort]``](#142-ports-cluster-imeicport)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Signals cluster [``[ImeICSignal]``](#143-signals-cluster-imeicsignal)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Controller [``[ImeIMController]``](#144-controller-imeimcontroller)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Command [``[ImeIMCommand2]``](#1441-command-imeimcommand2)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Invocation parameters [``[ImeIAMCommandInvpar2]``](#14411-invocation-parameters-imeiamcommandinvpar2)
@@ -35,16 +35,16 @@ Structure
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Parameters [``[ImeIAMErrorPar2]``](#14421-parameters-imeiamerrorpar2)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Vector [``[ImeIMVector2]``](#1443-vector-imeimvector2)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Vector item [``[ImeIMVectoritem2]``](#14431-vector-item-imeimvectoritem2)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeRMCommandMController [``[ImeIRMCommandMController]``](#1444-tblwdbermcommandmcontroller-imeirmcommandmcontroller)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Exteral commands [``[ImeIRMCommandMController]``](#1444-external-commands-imeirmcommandmcontroller)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Generic [``[ImeIMGeneric]``](#145-generic-imeimgeneric)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Inter-module buffer [``[ImeIMImbuf]``](#146-intermodule-buffer-imeimimbuf)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Port [``[ImeIMPort]``](#147-port-imeimport)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Process [``[ImeIMProcess]``](#148-process-imeimprocess)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Keys [``[ImeIAVKeylistKey]``](#1481-keys-imeiavkeylistkey)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Name and comment by locale [``[ImeIJAVKeylistKey]``](#14811-name-and-comment-by-locale-imeijavkeylistkey)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCVariable [``[ImeICVariable]``](#1482-tblwdbecvariable-imeicvariable)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Variables cluster [``[ImeICVariable]``](#1482-variables-cluster-imeicvariable)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ Finite state machine [``[ImeIMFsm]``](#1483-finite-state-machine-imeimfsm)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- TblWdbeCFsmstate [``[ImeICFsmstate]``](#14831-tblwdbecfsmstate-imeicfsmstate)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- FSM states cluster [``[ImeICFsmstate]``](#14831-fsm-states-cluster-imeicfsmstate)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\+ FSM state [``[ImeIMFsmstate]``](#14832-fsm-state-imeimfsmstate)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Steppings [``[ImeIAMFsmstateStep]``](#148321-steppings-imeiamfsmstatestep)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\- Variable [``[ImeIMVariable]``](#1484-variable-imeimvariable)
@@ -92,7 +92,7 @@ srefKVoltstd (string)|voltage standard<br>_1v2: 1.2V<br>_1v8: 1.8V<br>_2v5: 2.5V
 
 [//]: # (IP ImeIMBank.columns - END)
 
-### 1.1.1 TblWdbeCPin ``[ImeICPin]``
+### 1.1.1 Pin cluster ``[ImeICPin]``
 
 [//]: # (IP ImeICPin.superUse - RBEGIN)
 
@@ -277,7 +277,7 @@ sref (string)|identifier|
 
 [//]: # (IP ImeIMModule.columns - END)
 
-### 1.4.1 TblWdbeCGeneric ``[ImeICGeneric]``
+### 1.4.1 Generics cluster ``[ImeICGeneric]``
 
 [//]: # (IP ImeICGeneric.superUse - BEGIN)
 
@@ -295,7 +295,7 @@ iref (ubigint)|integer reference|
 
 [//]: # (IP ImeICGeneric.columns - REND)
 
-### 1.4.2 TblWdbeCPort ``[ImeICPort]``
+### 1.4.2 Ports cluster ``[ImeICPort]``
 
 [//]: # (IP ImeICPort.superUse - BEGIN)
 
@@ -313,7 +313,7 @@ iref (ubigint)|integer reference|
 
 [//]: # (IP ImeICPort.columns - REND)
 
-### 1.4.3 TblWdbeCSignal ``[ImeICSignal]``
+### 1.4.3 Signals cluster ``[ImeICSignal]``
 
 [//]: # (IP ImeICSignal.superUse - BEGIN)
 
@@ -503,7 +503,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIMVectoritem2.columns - END)
 
-### 1.4.4.4 TblWdbeRMCommandMController ``[ImeIRMCommandMController]``
+### 1.4.4.4 External commands ``[ImeIRMCommandMController]``
 
 [//]: # (IP ImeIRMCommandMController.superUse - BEGIN)
 
@@ -658,7 +658,7 @@ Comment (string)|comment|
 
 [//]: # (IP ImeIJAVKeylistKey.columns - END)
 
-### 1.4.8.2 TblWdbeCVariable ``[ImeICVariable]``
+### 1.4.8.2 Variables cluster ``[ImeICVariable]``
 
 [//]: # (IP ImeICVariable.superUse - BEGIN)
 
@@ -686,7 +686,7 @@ Use: indicate a process is a finite state machine (no content)
 
 [//]: # (IP ImeIMFsm.superUse - END)
 
-### 1.4.8.3.1 TblWdbeCFsmstate ``[ImeICFsmstate]``
+### 1.4.8.3.1 FSM states cluster ``[ImeICFsmstate]``
 
 [//]: # (IP ImeICFsmstate.superUse - BEGIN)
 
